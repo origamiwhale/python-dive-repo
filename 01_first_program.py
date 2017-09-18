@@ -1,3 +1,7 @@
+'''
+This module contains approximate_size function form DIP Chapter 01
+
+'''
 SUFFIXES = {
     1000: ['KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
     1024: ['KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB']
@@ -16,7 +20,6 @@ def approximate_size(size, a_kilobate_is_1024_bytes=True):
 
     if size < 0:
         raise ValueError('size must be non-negative')
-    
     multiple = 1024 if a_kilobate_is_1024_bytes else 1000
     for suffix in SUFFIXES[multiple]:
         size /= multiple
